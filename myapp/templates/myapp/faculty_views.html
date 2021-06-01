@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  </head>
+  <body>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-5">
+                <h2>Faculty Info</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-5">
+                {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                {% endif %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="fac_id">Faculty ID</label>
+                        <input type="text" name="fac_id" class="form-control" id="fac_id" aria-describedby="usernameHelp">
+                        <small id="usernameHelp" class="form-text text-muted">Your stu_id must be unique. We'll let you know if someone has taken it already.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="login_id">LogIn ID</label>
+                        <input type="text" name="login_id" class="form-control" id="login_id" aria-describedby="usernameHelp">
+                        <small id="usernameHelp" class="form-text text-muted">Your login_id must be unique. We'll let you know if someone has taken it already.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fac_name">Name</label>
+                        <input type="text" name="fac_name" class="form-control" id="fac_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="fac_mail">Email</label>
+                        <input type="text" name="fac_mail" class="form-control" id="fac_mail">
+                    </div>
+                    <div class="form-group">
+                        <label for="fac_phone_no">Phone No</label>
+                        <input type="text" name="fac_phone_no" class="form-control" id="fac_phone_no">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <hr>
+
+            </div>
+        </div>
+  </body>
+</html>
